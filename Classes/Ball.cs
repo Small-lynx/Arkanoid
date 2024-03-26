@@ -24,6 +24,13 @@ namespace Arkanoid.Classes
             speedY = -12;
             isEndGame = false;
         }
+
+        /// <summary>
+        /// Движение мяча и проверка столкновения
+        /// </summary>
+        /// <param name="rectangles">Список блоков</param>
+        /// <param name="racket">Прямоугольник ракетки</param>
+        /// <returns></returns>
         public Rectangle Move(List<Rectangle> rectangles, Rectangle racket)
         {
             positionBall.Y += speedY;
@@ -58,27 +65,41 @@ namespace Arkanoid.Classes
             }
             return destroydetRectangle;
         }
+
+        /// <summary>
+        /// Возвращяет координаты мяча
+        /// </summary>
+        /// <returns></returns>
         public Point getPositionBall()
         {
             return positionBall;
         }
 
+        /// <summary>
+        /// Возвращяет размер мяча
+        /// </summary>
+        /// <returns></returns>
         public Size getSizeBall()
         {
             return new Size(ball.Width, ball.Height);
         }
 
+        /// <summary>
+        /// Задает координаты мяча 
+        /// </summary>
+        /// <returns></returns>
         public void setPosition(Point position)
         {
             positionBall = position;
         }
 
-        public bool getGameMode()
+        /// <summary>
+        /// Возвращяет значение конца игры
+        /// </summary>
+        /// <returns></returns>
+        public bool getEndGame()
         {
             return isEndGame;
-        }
-        public void setGemeMode()
-        {
         }
     }
 }

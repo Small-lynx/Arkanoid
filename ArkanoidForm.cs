@@ -39,6 +39,9 @@ namespace Arkanoid
             FillingBlocks();
         }
 
+        /// <summary>
+        /// Пересоздание блоков, ракетки и мяча
+        /// </summary>
         private void FillingBlocks()
         {
             physics = new Physics(new Rectangle(0, 0, Width, Height));
@@ -66,6 +69,9 @@ namespace Arkanoid
             timerMoving.Start();
         }
 
+        /// <summary>
+        /// Перерисовка
+        /// </summary>
         private void Redraw()
         {
             buffered.Graphics.DrawImage(spase, 0, 0);
@@ -78,6 +84,9 @@ namespace Arkanoid
             buffered.Render();
         }
 
+        /// <summary>
+        /// Действия при тике таймера
+        /// </summary>
         private void timerMoving_Tick(object sender, EventArgs e)
         {
             timerMoving.Stop();
@@ -98,11 +107,17 @@ namespace Arkanoid
             timerMoving.Start();
         }
 
+        /// <summary>
+        /// Движение курсора
+        /// </summary>
         private void ArkanoidForm_MouseMove(object sender, MouseEventArgs e)
         {
             physics.MoveRacket(e.Location);
         }
 
+        /// <summary>
+        /// Нажатие по экрану
+        /// </summary>
         private void ArkanoidForm_Click(object sender, EventArgs e)
         {
             if (isEndGame)
